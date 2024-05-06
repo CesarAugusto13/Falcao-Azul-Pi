@@ -1,0 +1,18 @@
+
+header {
+    background-color: #75b3f5;
+    color: white;
+    padding: 5px;
+    text-align: left;
+    
+}
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    
+}
