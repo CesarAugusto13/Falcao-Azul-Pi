@@ -1,0 +1,25 @@
+footer {
+    background-color: #33488F;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .footer-links {
+    margin-top: 20px;
+  }
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+
+  .container {
+    display: flex;
+  }
+  .cargo {
+    margin-right: 9.4rem; /* Espaçamento entre os textos */
+  }
