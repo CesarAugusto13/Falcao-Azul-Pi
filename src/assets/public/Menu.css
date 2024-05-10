@@ -1,18 +1,28 @@
-
 header {
-    background-color: #75b3f5;
-    color: white;
-    padding: 5px;
-    text-align: left;
-    
+    background-color: #75b3f5; /* Cor de fundo azul */
+    color: white; /* Cor do texto */
+    padding: 1.25rem; /* Espaçamento interno (20px em rem) */
+    text-align: center; /* Alinhar texto ao centro */
+    border-radius: 1rem; /* Adicionar border-radius (10px em rem) */
+    margin: 0 auto; 
+    max-width: 37.5rem; 
 }
+
 nav {
     display: flex;
-    justify-content: center;
-    margin-top: 10px;
+    justify-content: center; /* Centralizar itens horizontalmente */
+    gap: 1.25rem; /* Espaçamento entre os itens (20px em rem) */
 }
+
 nav a {
-    color: white;
-    text-decoration: none;
-    
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remover sublinhado */
+    padding: 0.625rem; /* Espaçamento interno (10px em rem) */
+}
+
+/* Media query para telas menores que 37.5rem (por exemplo, dispositivos móveis) */
+@media screen and (max-width: 37.5rem) {
+    header {
+        margin: 0 1.25rem; /* Reduzir a margem nas laterais (20px em rem) */
+    }
 }
