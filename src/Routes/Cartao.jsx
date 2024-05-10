@@ -1,12 +1,12 @@
 import React from 'react'
 import Menu from '../Components/Menu'
-const Home = () => {
+const Cartao = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Cartão</h1>
       <Menu></Menu>
     </div>
   )
 }
 
-export default Home
+export default Cartao
