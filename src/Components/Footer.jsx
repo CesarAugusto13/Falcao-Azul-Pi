@@ -1,67 +1,64 @@
 import React from 'react';
-import FalcaoLogo from '../assets/images/logo.png'
-import InstagramIcone from '../assets/images/instagram_icon.png'
-import FacebookIcone from '../assets/images/facebook_icon.png'
-import '../assets/public/Footer.css'
+import InstagramIcone from '../assets/images/instagram.png'
+import FacebookIcone from '../assets/images/facebook.png'
+import QRCodeIcone from '../assets/images/qr_code.png'
+import IgrejaAdvenista from '../assets/images/adventista.png'
+import '../assets/public/Footer.css';
 
-function Menu() {
+function Footer() {
     return (
-        <footer>
-            <h4>Endereço Da Igreja Adventista do Sétimo Dia do Jardim Branca Flor 
-            <br/>Rua Piratini - 163 -Jardim Branca Flor, Itapecerica da Serra - SP
-            06855-620
-            </h4>
-            Email: gabriel.hemendinger@gmail.com
-            <br/>
-            <div class='redes'>
-            Redes Sociais:
-                <a href="https://www.instagram.com/falcao_azul_aps/" target="_blank">
-                    <img src={InstagramIcone} alt='Instagram Logo'/>
-                </a>
-                <a href="https://www.facebook.com/ClubeFalcaoAzul" target="_blank">
-                    <img src={FacebookIcone} alt='Facebook Logo'/>
-                </a>
+        <footer class="rodape" id="contato">
+            <div class="rodape-div">
+
+                <div class="rodape-div-1">
+                    <div class="rodape-div-1-coluna">
+                        <span><b>Local de Reuniões</b></span>
+                        <p><b>Sábados: </b>
+                        Rua Piratini, 163 - Jardim Branca Flor, Itapecerica da Serra - SP, 06855-620   </p>
+                        <p><b>Domingos: </b> Rua Cerro Largo - Jardim Branca Flor, centro da praça, 06855-620</p>
+                    </div>
+                </div>
+
+                <div class="rodape-div-2">
+                    <div class="rodape-div-2-coluna">
+                        <span><b>Contatos</b></span>
+                        <p>11 98639-4544 - Gabriel Quintanilha</p>
+                        <img src={QRCodeIcone} alt="QR Code Whatsapp" />
+                    </div>
+                </div>
+
+                <div class="rodape-div-3">
+                    <div class="rodape-div-4-coluna">
+                        <span><b>Direção</b></span>
+                        <p>Diretor: Gabriel Quintanilha</p>
+                        <p>Vice-Diretora: Larissa Souza</p>
+                        <p>Secretária: Leticia Souza</p>
+                        <p>Tesoureiro: Bruno Feitosa</p>
+                        <p>Capelão: Tiago Quintanilha</p>
+                    </div>
+                </div>
+
+                <div class="rodape-div-4">
+                    <div class="rodape-div-3-coluna">
+                        <span><b>Redes Sociais</b></span>
+                        <div className='elementos'>
+                            <p><a href="https://www.instagram.com/falcao_azul_aps/" target="_blank">
+                            <img src={InstagramIcone} alt='Instagram Logo'/> </a>
+                            </p>
+                            <p>
+                            <a href="https://www.facebook.com/ClubeFalcaoAzul" target="_blank">
+                            <img src={FacebookIcone} alt='Facebook Logo'/></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="logoAdventista">
+                    <img src={IgrejaAdvenista} alt="Igreja Adventista"/>
+                </div>
+
             </div>
-        <div class='container'>
-            <div class='cargo'>
-                <h4>
-                    Diretor:
-                    <br/>
-                    Gabriel Quintanilha
-                </h4>
-            </div>
-            <div class='cargo'>
-                <h4>
-                    Vice-Diretora:
-                    <br/>
-                    Larissa Souza
-                </h4>
-            </div>
-            <div class='cargo'>
-                <h4>
-                    Secretária:
-                    <br/>
-                    Leticia Souza
-                </h4>
-            </div>
-            <div class='cargo'>
-                <h4>
-                    Tesoureiro:
-                    <br/>
-                    Bruno Feitosa
-                </h4>
-            </div>
-            <div class='cargo'>
-                <h4>
-                    Capelão:
-                    <br/>
-                    Tiago Quintanilha
-                </h4>
-            </div>
-        </div>
-        <img src={FalcaoLogo} alt="Falcao Azul Logo" />
-      </footer>
+        </footer>
     );
 }
 
-export default Menu;
+export default Footer;
