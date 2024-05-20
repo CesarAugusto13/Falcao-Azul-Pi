@@ -1,0 +1,171 @@
+.rodape{
+  bottom:0;
+  position: fixed;
+  background-color: #33488f;
+  color: white;
+  height: 130px;
+  width: 100%;
+  font-size: 10px;
+  font-family: helvetica;
+}
+.rodape a{
+  text-decoration: none;
+  color: white;
+}
+.rodape p{
+  margin-bottom: 5px;
+}
+body, html {
+  margin: 0;
+}
+
+.rodape-div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  align-items: stretch;
+  padding-top: 5px;
+  padding-left: 30px; 
+  box-sizing: border-box; 
+}
+
+.rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4{
+  display: flex;
+  padding: 10px;
+  padding-right: 30px;
+}
+
+.rodape-div-2-coluna img {
+  padding-top: .3125rem;
+  width: 50px;
+}
+
+.rodape-div-4-coluna p {
+  margin-top: 5px; 
+  margin-bottom: 5px; 
+}
+
+.elementos p, img{
+  width: 25px;
+  display: inline-block;
+  padding-right: .625rem;
+
+}
+
+span b {
+  font-size: 14px;
+}
+
+.rodape-direitos{
+  width: calc(100% - 20px);
+  background-color: black;
+  padding: .625rem;
+  margin: 0px;
+  text-align: center;
+}
+
+
+.logoAdventista {
+  padding-top: 40px;
+  padding-left: 100px;
+  padding-right: 20px;
+}
+
+.logoAdventista img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+
+@media (max-width: 1150px) {
+
+  .logoAdventista {
+    padding-left: 40px; /* Ajuste o espaçamento da logoAdventista conforme necessário */
+  }
+  
+  .logoAdventista img {
+    width: 40px; /* Altere o tamanho da imagem conforme necessário */
+    height: 40px;
+  }
+
+  .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4{
+    display: flex;
+    padding: 10px;
+    padding-right: 20px;
+  }
+  
+}
+
+@media (min-width: 1366px) {
+
+  .rodape {
+    height: 150px;
+    font-size: 13px;
+  }
+
+  .logoAdventista {
+    padding-top: 40px;
+    padding-left: 100px;
+    padding-right: 20px;
+  }
+  
+  .logoAdventista img {
+    width: 60px; /* Altere o tamanho da imagem conforme necessário */
+    height: 60px;
+  }
+
+  .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4{
+    display: flex;
+    padding: 10px;
+    padding-right: 60px;
+    padding-left: 30px;
+  }
+
+  span b {
+    font-size: 16px;
+  }
+
+  .rodape-div-2-coluna img {
+    padding-top: .3125rem;
+    width: 60px;
+  }
+  
+}
+
+@media (min-width: 1920px) {
+
+  .rodape {
+    height: 200px;
+    font-size: 16px;
+  }
+
+  .logoAdventista {
+    padding-top: 40px;
+   
+    padding-left: 220px;
+    padding-right: 20px;
+  }
+  
+  .logoAdventista img {
+    width: 80px; 
+    height: 80px;
+  }
+
+  .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4{
+    display: flex;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 30px;
+  }
+
+  span b {
+    font-size: 20px;
+  }
+
+  .rodape-div-2-coluna img {
+    padding-top: .3125rem;
+    width: 60px;
+  }
+  
+}
