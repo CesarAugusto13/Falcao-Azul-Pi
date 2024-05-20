@@ -1,13 +1,13 @@
 import React from 'react';
 import '../assets/public/Menu.css'
-import LogoDesbravadores from '../assets/images/logo.png'
+import LogoFalcaoAzul from '../assets/images/logo.png'
 import IconePerfil from '../assets/images/perfil3.png'
 
 function Menu() {
     return (
         <div className="container">
             <div className="logo-container">
-                <img src={LogoDesbravadores} alt="Logo Desbravadores" className="logo" />
+                <img src={LogoFalcaoAzul} alt="Logo Desbravadores" className="logo" />
                 <h3>Clube de Desbravadores Falcão Azul</h3>
             </div>
             <header>
