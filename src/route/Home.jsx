@@ -1,6 +1,7 @@
 import React from 'react'
 import Menu from '../Components/Menu'
 import Footer from '../Components/Footer'
+import '../assets/public/Home.css'
 import LogoFalcaoAzul from '../assets/images/logo.png'
 
 const Home = () => {
@@ -34,6 +35,8 @@ const Home = () => {
             </p>
           </div>
         </section>
+
+        <img src={LogoFalcaoAzul} alt="Logo Falcão Azul" class="logoClubeMain"/>
       </main>
       <Footer></Footer>
     </div>

@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './Routes/Home'
-import Cartao from './Routes/Cartao'
-import Agenda from './Routes/Agenda'
-import Pontuacao from './Routes/Pontuacao'
-import Login from './Routes/Login'
+import Home from './route/Home'
+import Cartao from './route/Cartao'
+import Agenda from './route/Agenda'
+import Pontuacao from './route/Pontuacao'
+import Login from './route/Login'
 
 function App() {
 
@@ -16,6 +16,8 @@ function App() {
           <Route path="/agenda" element={<Agenda />}/>
           <Route path="/pontuacao" element={<Pontuacao/>} />
           <Route path="/login" element={<Login/>}/>
+
+          
         </Routes>
       </BrowserRouter>
     </div>
