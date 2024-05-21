@@ -1,16 +1,31 @@
 main {
-    display: flex; /* Enable flexbox layout */
-    justify-content: space-between; /* Distribute space between items */
-    align-items: center; /* Align items vertically in the center */
-    
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 130px;
 
-main > section { /* Target direct child sections */
-    flex-grow: 1; /* Allow sections to grow and fill available space */
 }
 
 .logoClubeMain {
-    flex: 0 0 auto; /* Prevent image from growing and shrinking with other items */
-    margin-left: 20px; /* Add margin for spacing */
-    width: 200px;
+    width: 150px;
+    margin-top: 0; 
+    padding-bottom: 0px;
+}
+
+.h2quemSomos {
+    text-align: center;  
+}
+
+.h2IdadePart {
+    text-align: center;   
+}
+
+.h2HorarioLocal {
+    text-align: center;   
+}
+
+p {
+    text-align: center;
 }
