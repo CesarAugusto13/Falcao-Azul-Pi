@@ -21,7 +21,7 @@ function Footer() {
 
                 <div class="rodape-div-2">
                     <div class="rodape-div-2-coluna">
-                        <span><b>Contatos</b></span>
+                        <span><b>Contato</b></span>
                         <p>11 98639-4544 - Gabriel Quintanilha</p>
                         <img src={QRCodeIcone} alt="QR Code Whatsapp" />
                     </div>

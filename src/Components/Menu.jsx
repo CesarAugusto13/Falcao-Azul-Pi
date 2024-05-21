@@ -1,25 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; 
 import '../assets/public/Menu.css'
-import LogoDesbravadores from '../assets/images/logo.png'
+import LogoFalcaoAzul from '../assets/images/logo.png'
 import IconePerfil from '../assets/images/perfil3.png'
 
 function Menu() {
     return (
         <div className="container">
             <div className="logo-container">
-                <img src={LogoDesbravadores} alt="Logo Desbravadores" className="logo" />
+                <img src={LogoFalcaoAzul} alt="Logo Desbravadores" className="logo" />
                 <h3>Clube de Desbravadores Falcão Azul</h3>
             </div>
             <header>
                 <nav>
-                    <a href="/">Home</a>
-                    <a href="/cartao">Área do Cartão</a>
-                    <a href="/agenda">Agenda</a>
-                    <a href="/pontuacao">Pontuação</a>
+                    <Link to="/">Home</Link>
+                    <Link to="/cartao">Área do Cartão</Link>
+                    <Link to="/agenda">Agenda</Link>
+                    <Link to="/pontuacao">Pontuação</Link>
                 </nav>
             </header>
             <div className='login'>
-                <a href='/login'><h4>Login / Cadastro</h4></a>
+                <Link to='/login'><h4>Login / Cadastro</h4></Link>
                 <img src={IconePerfil} alt="Icone Perfil" className='perfil'/>
             </div>
         </div>

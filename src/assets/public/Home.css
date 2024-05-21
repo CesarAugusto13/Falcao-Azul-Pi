@@ -1,0 +1,31 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 130px;
+
+}
+
+.logoClubeMain {
+    width: 150px;
+    margin-top: 0; 
+    padding-bottom: 0px;
+}
+
+.h2quemSomos {
+    text-align: center;  
+}
+
+.h2IdadePart {
+    text-align: center;   
+}
+
+.h2HorarioLocal {
+    text-align: center;   
+}
+
+p {
+    text-align: center;
+}
