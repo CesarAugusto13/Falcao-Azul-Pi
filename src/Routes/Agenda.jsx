@@ -7,11 +7,9 @@ import '../assets/public/Agenda.css'
 const Agenda = () => {
   return (
     <body>
-      <Menu></Menu>
-      <div className='principal'>
-        <Calendario/>
-      </div>
-      <Footer></Footer>
+      <Menu/>
+      <Calendario/>
+      <Footer/>
     </body>
   )
 }
