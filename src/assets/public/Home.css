@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.josefin-sans-heading {
+  text-align: center;  
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+}
+
+.open-sans-body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500; 
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 130px;
+  overflow: hidden; 
+}
+
+.logoClubeMain {
+  width: 150px;
+  margin-top: 0; 
+  padding-bottom: 0px;
+}
+
+.h2IdadePart, .h2HorarioLocal, .main p {
+  text-align: center;
+}
+
+@media (max-height: 810px) {
+  body, html {
+    overflow: auto;
+  }
+
+  .main {
+    height: auto;
+    margin-bottom: 0;
+    overflow: visible; 
+    margin-bottom: 130px;
+  }
+}
