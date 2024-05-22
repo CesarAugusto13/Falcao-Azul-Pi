@@ -42,7 +42,7 @@ const MyCalendar = () => {
         events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500 }}
+        style={{ height: 300, width:600 }}
         selectable
         onSelectSlot={handleSelectSlot}
         messages={{
@@ -60,52 +60,6 @@ const MyCalendar = () => {
           showMore: (total) => `+ mais ${total}`
         }}
       />
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
-        contentLabel="Adicionar Evento"
-      >
-        <h2>Adicionar Evento</h2>
-        <form>
-          <div>
-            <label>Título:</label>
-            <input
-              type="text"
-              name="title"
-              value={newEvent.title}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <label>Descrição:</label>
-            <input
-              type="text"
-              name="description"
-              value={newEvent.description}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <label>Data de Início:</label>
-            <input
-              type="datetime-local"
-              name="start"
-              value={moment(newEvent.start).format('YYYY-MM-DDTHH:mm')}
-              onChange={(e) => setNewEvent({ ...newEvent, start: new Date(e.target.value) })}
-            />
-          </div>
-          <div>
-            <label>Data de Término:</label>
-            <input
-              type="datetime-local"
-              name="end"
-              value={moment(newEvent.end).format('YYYY-MM-DDTHH:mm')}
-              onChange={(e) => setNewEvent({ ...newEvent, end: new Date(e.target.value) })}
-            />
-          </div>
-          <button type="button" onClick={handleAddEvent}>Adicionar Evento</button>
-        </form>
-      </Modal>
     </div>
   );
 };
