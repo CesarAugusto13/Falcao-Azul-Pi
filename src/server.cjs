@@ -55,17 +55,8 @@ db.connect((err) => {
                 console.log('Tabela Users criada ou já existente');
                 
                 // Iniciar o servidor Express
-                app.listen(3001, () => {
-                    console.log('Servidor rodando na porta 3001');
-                });
+                
             });
         });
     });
 });
-
-// Rota para teste
-app.get('/backend', (req, res) => {
-    res.send('Backend is working');
-});
-
-module.exports = db;
