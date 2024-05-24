@@ -38,7 +38,7 @@ db.connect((err) => {
             console.log('Esquema selecionado:', db.config.database);
             
             // Criar a tabela de usuários se não existir
-            const createUsersTable = `
+            const CriarTabelaUsuario = `
                 CREATE TABLE IF NOT EXISTS usuarios (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     nome VARCHAR(255) NOT NULL,
@@ -46,17 +46,34 @@ db.connect((err) => {
                     senha VARCHAR(255) NOT NULL
                 )
             `;
+
+            const CriarTabelaEvento = `
+                CREATE TABLE IF NOT EXISTS Eventos (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    nome VARCHAR(255) NOT NULL,
+                    data_inicio DATETIME NOT NULL,
+                    data_fim DATETIME NOT NULL,
+                    descricao TEXT
+                )
+            `;
             
-            db.query(createUsersTable, (err, result) => {
+            db.query(CriarTabelaUsuario, (err, result) => {
                 if (err) {
-                    console.error('Erro ao criar a tabela Users:', err);
+                    console.error('Erro ao criar a tabela usuario:', err);
                     return;
                 }
-                console.log('Tabela Users criada ou já existente');
-                
-                // Iniciar o servidor Express
-                
+                console.log('Tabela usuario criada ou já existente');
+                                
             });
+
+            db.query(CriarTabelaEvento, (err, result) => {
+                if (err) {
+                    console.error('Erro ao criar a tabela Evento:', err);
+                    return;                
+                }
+                console.log('Tabela de Evento criada ou já existente')
+            });
+
         });
     });
 });
