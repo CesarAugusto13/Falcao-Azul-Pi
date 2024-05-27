@@ -4,7 +4,7 @@ const app = express();
 
 hostname = '127.0.0.1'
 usuario = 'root'
-senha = '#Root@75'
+senha = 'root'
 esquema = 'FalcaoAzul'
 // Configuração da conexão com o banco de dados MySQL
 const db = mysql.createConnection({
@@ -47,17 +47,31 @@ db.connect((err) => {
                 )
             `;
             
+            const createEventsTable = `
+            CREATE TABLE IF NOT EXISTS \`eventos\` (
+              \`id\` INT NOT NULL AUTO_INCREMENT,
+              \`titulo\` VARCHAR(45) NOT NULL,
+              \`descricao\` VARCHAR(255) NOT NULL,
+              \`data\` DATE NOT NULL,
+              PRIMARY KEY (\`id\`)
+            );`;
+
             db.query(createUsersTable, (err, result) => {
                 if (err) {
                     console.error('Erro ao criar a tabela Users:', err);
                     return;
                 }
                 console.log('Tabela Users criada ou já existente');
-                
-                // Iniciar o servidor Express
-                app.listen(3001, () => {
-                    console.log('Servidor rodando na porta 3001');
-                });
+
+
+            db.query(createEventsTable, (err, result) =>{
+                if (err) {
+                    console.error('Erro ao criar a tabela Events:', err);
+                    return;
+                }
+                console.log('Tabela Events criada ou já existente');
+
+            })    
             });
         });
     });
