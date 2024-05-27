@@ -29,6 +29,16 @@ const CalendarComponent = () => {
 
   return (
     <div>
+            <div>
+        <h3>Eventos:</h3>
+        <ul>
+          {Object.entries(events).map(([eventDate, description]) => (
+            <li key={eventDate}>
+              <strong>{eventDate}:</strong> {description}
+            </li>
+          ))}
+        </ul>
+      </div>
       <Calendar
         onClickDay={onDateChange}
         locale="pt-BR"
@@ -50,16 +60,6 @@ const CalendarComponent = () => {
         <button onClick={handleSaveEvent}>Salvar Evento</button>
         <button onClick={() => setModalIsOpen(false)}>Cancelar</button>
       </Modal>
-      <div>
-        <h3>Eventos:</h3>
-        <ul>
-          {Object.entries(events).map(([eventDate, description]) => (
-            <li key={eventDate}>
-              <strong>{eventDate}:</strong> {description}
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 };
