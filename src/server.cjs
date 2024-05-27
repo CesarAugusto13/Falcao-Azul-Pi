@@ -1,6 +1,9 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const mysql = require('mysql2');
+const cors = require('cors');
 const app = express();
+
 
 hostname = '127.0.0.1'
 usuario = 'root'
@@ -12,6 +15,10 @@ const db = mysql.createConnection({
     user: usuario,
     password: senha
 });
+
+app.use(cors());
+app.use(bodyParser.json());
+
 
 // Conectar ao banco de dados
 db.connect((err) => {
@@ -70,11 +77,37 @@ db.connect((err) => {
                     return;
                 }
                 console.log('Tabela Events criada ou já existente');
-
-            })    
-            });
+            })
         });
     });
+});
+
+app.post('/add-event', (req, res) => {
+    const { titulo, descricao, data } = req.body;
+    const query = 'INSERT INTO eventos (titulo, descricao, data) VALUES (?, ?, ?)';
+    db.query(query, [titulo, descricao, data], (err, result) => {
+      if (err) {
+        return res.status(500).send(err);
+      }
+      res.status(200).send('Evento adicionado com sucesso');
+    });
+});
+
+
+app.get('/events', (req, res) => {
+    const query = 'SELECT * FROM eventos';
+    db.query(query, (err, results) => {
+      if (err) {
+        return res.status(500).send(err);
+      }
+      res.status(200).json(results);
+    });
+});
+
+
+app.listen(3001, () => {
+    console.log('Servidor rodando na porta 3001');
+});
 });
 
 module.exports = db;
