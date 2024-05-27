@@ -1,67 +1,63 @@
 import React, { useState } from 'react';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
-import moment from 'moment';
-import 'moment/locale/pt-br';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import Modal from 'react-modal';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-// Configure localizer to use Portuguese
-moment.locale('pt-br');
-const localizer = momentLocalizer(moment);
+Modal.setAppElement('#root');
 
-const MyCalendar = () => {
-  const [events, setEvents] = useState([]);
+const Calendario = () => {
+  const [date, setDate] = useState(new Date());
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [newEvent, setNewEvent] = useState({
-    titulo: '',
-    descricao: '',
-    DataInicio: new Date(),
-    DataFim: new Date(),
-  });
+  const [eventDescription, setEventDescription] = useState('');
+  const [events, setEvents] = useState({});
 
-  const handleSelectSlot = ({ start, end }) => {
-    setNewEvent({ ...newEvent, start, end });
+  const onDateChange = (selectedDate) => {
+    setDate(selectedDate);
     setModalIsOpen(true);
   };
 
-  const handleAddEvent = () => {
-    setEvents([...events, newEvent]);
+  const handleSaveEvent = () => {
+    setEvents((prevEvents) => ({
+      ...prevEvents,
+      [date.toDateString()]: eventDescription
+    }));
     setModalIsOpen(false);
-    setNewEvent({ title: '', description: '', start: new Date(), end: new Date() });
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewEvent({ ...newEvent, [name]: value });
+    setEventDescription('');
   };
 
   return (
     <div>
-      <Calendar
-        localizer={localizer}
-        events={events}
-        startAccessor="start"
-        endAccessor="end"
-        style={{ height: 300, width:600 }}
-        selectable
-        onSelectSlot={handleSelectSlot}
-        messages={{
-          next: "Próximo",
-          previous: "Anterior",
-          today: "Hoje",
-          month: "Mês",
-          week: "Semana",
-          day: "Dia",
-          agenda: "Agenda",
-          date: "Data",
-          time: "Hora",
-          event: "Evento",
-          noEventsInRange: "Não há eventos neste intervalo.",
-          showMore: (total) => `+ mais ${total}`
-        }}
-      />
+
+      <div>
+        <h3>Eventos:</h3>
+        <ul>
+          {Object.entries(events).map(([eventDate, description]) => (
+            <li key={eventDate}>
+              <strong>{eventDate}:</strong> {description}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <Calendar onClickDay={onDateChange} />
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        contentLabel="Event Description Modal"
+      >
+        <h2>Event for {date.toDateString()}</h2>
+        <textarea
+          value={eventDescription}
+          onChange={(e) => setEventDescription(e.target.value)}
+          placeholder="Enter event description"
+          rows="4"
+          cols="50"
+        />
+        <br />
+        <button onClick={handleSaveEvent}>Save Event</button>
+        <button onClick={() => setModalIsOpen(false)}>Cancel</button>
+      </Modal>
     </div>
   );
 };
 
-export default MyCalendar;
+export default Calendario;

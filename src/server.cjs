@@ -63,9 +63,4 @@ db.connect((err) => {
     });
 });
 
-// Rota para teste
-app.get('/backend', (req, res) => {
-    res.send('Backend is working');
-});
-
 module.exports = db;
