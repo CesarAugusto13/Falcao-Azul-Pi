@@ -1,29 +1,21 @@
-.calendar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .events-list {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 500px;
-  }
-  
-  .events-list h3 {
-    text-align: center;
-  }
-  
-  .events-list ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .events-list li {
-    background-color: #f4f4f4;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
-  
+.react-calendar {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.ReactModal__Content {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+}
