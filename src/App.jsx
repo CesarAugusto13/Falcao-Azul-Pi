@@ -4,7 +4,7 @@ import Cartao from './route/Cartao'
 import Agenda from './route/Agenda'
 import Pontuacao from './route/Pontuacao'
 import Login from './route/Login'
-
+import Register from './route/Register'
 function App() {
 
   return (
@@ -16,6 +16,7 @@ function App() {
           <Route path="/agenda" element={<Agenda />}/>
           <Route path="/pontuacao" element={<Pontuacao/>} />
           <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
 
           
         </Routes>

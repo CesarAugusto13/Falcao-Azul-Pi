@@ -1,48 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react'
 import '../assets/public/Login.css'
-import Footer from '../Components/Footer'
+import { Link } from 'react-router-dom'; 
+import LogoFalcaoAzul from '../assets/images/logo.png'
 
-function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Username:', username);
-    console.log('Password:', password);
-  };
-
+const Login = () => {
   return (
-    <div>
-      <div className='login'>
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="username">Nome de Usuário ou Email:</label>
-            <input 
-              type="text" 
-              id="username" 
-              value={username} 
-              onChange={(e) => setUsername(e.target.value)} 
-              required 
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Senha:</label>
-            <input 
-              type="password" 
-              id="password" 
-              value={password} 
-              onChange={(e) => setPassword(e.target.value)} 
-              required 
-            />
-          </div>
-          <button type="submit">Login</button>
-        </form>
-      </div>
-    <Footer/>
+    <div className="formContainer">
+        <div className="formWrapper">
+        <img src={LogoFalcaoAzul} alt="Logo Desbravadores" className="logo" />
+            <span className='title'>Login</span>
+            <form>
+                <input type="email" placeholder='Email'autoFocus required/>
+                <input type="password" placeholder='Password' required/>
+                <button >Login</button>
+            </form>
+            <p>Não tem uma conta? <Link to='/register'><span href='/register'>Registrar</span></Link></p>
+        </div>
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login
