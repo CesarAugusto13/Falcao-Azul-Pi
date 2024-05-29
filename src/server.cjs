@@ -4,11 +4,11 @@ const mysql = require('mysql2');
 const cors = require('cors');
 const app = express();
 
+const hostname = '127.0.0.1';
+const usuario = 'root';
+const senha = 'root';
+const esquema = 'FalcaoAzul';
 
-hostname = '127.0.0.1'
-usuario = 'root'
-senha = 'root'
-esquema = 'FalcaoAzul'
 // Configuração da conexão com o banco de dados MySQL
 const db = mysql.createConnection({
     host: hostname,
@@ -18,7 +18,6 @@ const db = mysql.createConnection({
 
 app.use(cors());
 app.use(bodyParser.json());
-
 
 // Conectar ao banco de dados
 db.connect((err) => {
@@ -55,13 +54,16 @@ db.connect((err) => {
             `;
             
             const createEventsTable = `
-            CREATE TABLE IF NOT EXISTS \`eventos\` (
-              \`id\` INT NOT NULL AUTO_INCREMENT,
-              \`titulo\` VARCHAR(45) NOT NULL,
-              \`descricao\` VARCHAR(255) NOT NULL,
-              \`data\` DATE NOT NULL,
-              PRIMARY KEY (\`id\`)
-            );`;
+                CREATE TABLE IF NOT EXISTS eventos (
+                  id INT NOT NULL AUTO_INCREMENT,
+                  titulo VARCHAR(45) NOT NULL,
+                  descricao VARCHAR(255) NOT NULL,
+                  valor INT,  
+                  requisitos VARCHAR(255), 
+                  data DATE NOT NULL,
+                  PRIMARY KEY (id)
+                );
+            `;
 
             db.query(createUsersTable, (err, result) => {
                 if (err) {
@@ -69,45 +71,42 @@ db.connect((err) => {
                     return;
                 }
                 console.log('Tabela Users criada ou já existente');
+            });
 
-
-            db.query(createEventsTable, (err, result) =>{
+            db.query(createEventsTable, (err, result) => {
                 if (err) {
                     console.error('Erro ao criar a tabela Events:', err);
                     return;
                 }
                 console.log('Tabela Events criada ou já existente');
-            })
+            });
         });
     });
 });
 
 app.post('/add-event', (req, res) => {
-    const { titulo, descricao, data } = req.body;
-    const query = 'INSERT INTO eventos (titulo, descricao, data) VALUES (?, ?, ?)';
-    db.query(query, [titulo, descricao, data], (err, result) => {
-      if (err) {
-        return res.status(500).send(err);
-      }
-      res.status(200).send('Evento adicionado com sucesso');
+    const { titulo, descricao, valor, requisitos, data } = req.body;
+    const query = 'INSERT INTO eventos (titulo, descricao, valor, requisitos, data) VALUES (?, ?, ?, ?, ?)';
+    db.query(query, [titulo, descricao, valor, requisitos, data], (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        res.status(200).send('Evento adicionado com sucesso');
     });
 });
-
 
 app.get('/events', (req, res) => {
     const query = 'SELECT * FROM eventos';
     db.query(query, (err, results) => {
-      if (err) {
-        return res.status(500).send(err);
-      }
-      res.status(200).json(results);
+        if (err) {
+            return res.status(500).send(err);
+        }
+        res.status(200).json(results);
     });
 });
 
-
 app.listen(3001, () => {
     console.log('Servidor rodando na porta 3001');
-});
 });
 
 module.exports = db;

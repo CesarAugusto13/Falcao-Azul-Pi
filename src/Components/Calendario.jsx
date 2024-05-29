@@ -13,6 +13,8 @@ const Calendario = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [eventTitle, setEventTitle] = useState('');
   const [eventDescription, setEventDescription] = useState('');
+  const [eventValue, setEventValue] = useState(''); // Novo estado para "valor"
+  const [eventRequirements, setEventRequirements] = useState(''); // Novo estado para "requisitos"
   const [events, setEvents] = useState([]); // Inicializa como uma array vazia
 
   useEffect(() => {
@@ -37,6 +39,8 @@ const Calendario = () => {
     const eventData = {
       titulo: eventTitle,
       descricao: eventDescription,
+      valor: eventValue, // Adiciona o campo "valor"
+      requisitos: eventRequirements, // Adiciona o campo "requisitos"
       data: format(date, 'yyyy-MM-dd')
     };
 
@@ -45,6 +49,8 @@ const Calendario = () => {
       setModalIsOpen(false);
       setEventTitle('');
       setEventDescription('');
+      setEventValue(''); // Limpa o campo "valor"
+      setEventRequirements(''); // Limpa o campo "requisitos"
       fetchEvents(); // Atualiza a lista de eventos após salvar
     } catch (error) {
       console.error('Erro ao salvar evento:', error);
@@ -59,6 +65,10 @@ const Calendario = () => {
           {Array.isArray(events) && events.map((event) => (
             <li key={event.id}>
               <strong>{event.titulo}:</strong> {event.descricao} (em {format(new Date(event.data), 'PPP', { locale: ptBR })})
+              <br />
+              <strong>Valor:</strong> {event.valor}
+              <br />
+              <strong>Requisitos:</strong> {event.requisitos}
             </li>
           ))}
         </ul>
@@ -89,6 +99,20 @@ const Calendario = () => {
           value={eventDescription}
           onChange={(e) => setEventDescription(e.target.value)}
           placeholder="Digite a descrição do evento"
+          rows="4"
+          cols="50"
+        />
+        <br />
+        <input
+          type="text"
+          value={eventValue}
+          onChange={(e) => setEventValue(e.target.value)}
+          placeholder="Valor do evento"
+        />
+        <textarea
+          value={eventRequirements}
+          onChange={(e) => setEventRequirements(e.target.value)}
+          placeholder="Requisitos do evento"
           rows="4"
           cols="50"
         />

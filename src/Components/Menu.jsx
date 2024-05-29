@@ -6,7 +6,7 @@ import IconePerfil from '../assets/images/perfil3.png'
 
 function Menu() {
     return (
-        <div className="container">
+        <div className="menu-container">
             <div className="logo-container">
                 <img src={LogoFalcaoAzul} alt="Logo Desbravadores" className="logo" />
                 <h3>Clube de Desbravadores Falcão Azul</h3>
