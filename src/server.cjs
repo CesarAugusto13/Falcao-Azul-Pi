@@ -105,6 +105,20 @@ app.get('/events', (req, res) => {
     });
 });
 
+
+app.delete('/delete-event/:id', (req, res) => {
+    const eventId = req.params.id;
+    const query = 'DELETE FROM eventos WHERE id = ?';
+    db.query(query, [eventId], (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        res.status(200).send('Evento excluído com sucesso');
+    });
+});
+
+
+
 app.listen(3001, () => {
     console.log('Servidor rodando na porta 3001');
 });
