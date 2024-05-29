@@ -1,0 +1,32 @@
+.Cartao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    position: absolute;
+    top: 50%; /* Ancora os botões no meio verticalmente */
+    transform: translateY(-50%); /* Move os botões para cima metade da altura deles mesmos */
+    border-radius: 12rem;
+  }
+  .Cartao > img {
+    top:0%;
+    justify-content: center;
+    text-align: center;
+    
+  }
+  
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%; /* Ancora os botões no meio verticalmente */
+    transform: translateY(-50%); /* Move os botões para cima metade da altura deles mesmos */
+    border-radius: 12rem;
+  }
+  
+  .prev {
+    left: 24rem; /* Ancora o botão "prev" à esquerda */
+  }
+  
+  .next {
+    right: 24rem; /* Ancora o botão "next" à direita */
+  }
