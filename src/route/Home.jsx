@@ -4,8 +4,6 @@ import Footer from '../Components/Footer';
 import '../assets/public/Home.css';
 import LogoFalcaoAzul from '../assets/images/logo.png';
 
-import { motion } from 'framer-motion'
-
 const Home = () => {
   return (
     <div>
