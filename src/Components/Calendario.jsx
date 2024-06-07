@@ -49,7 +49,7 @@ const Calendario = () => {
     const eventData = {
       titulo: eventTitle,
       descricao: eventDescription,
-      valor: eventValue,
+      valor: eventValue.trim() === '' ? '00.00' : eventValue,
       requisitos: eventRequirements,
       data: format(date, 'yyyy-MM-dd')
     };
@@ -107,6 +107,7 @@ const Calendario = () => {
             value={eventTitle}
             onChange={(e) => setEventTitle(e.target.value)}
             placeholder="Título do evento"
+            required
           />
           <textarea
             value={eventDescription}
@@ -114,9 +115,10 @@ const Calendario = () => {
             placeholder="Digite a descrição do evento"
             rows="4"
             cols="50"
+            required
           />
           <input
-            type="text"
+            type="number"
             value={eventValue}
             onChange={(e) => setEventValue(e.target.value)}
             placeholder="Valor do evento"
