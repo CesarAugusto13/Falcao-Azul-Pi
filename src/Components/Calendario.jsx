@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import axios from 'axios';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
-import '../assets/public/Modal.css'
+import '../assets/public/Modal.css';
 
 Modal.setAppElement('#root'); // Necessário para acessibilidade
 
@@ -18,32 +18,13 @@ const Calendario = () => {
   const [eventRequirements, setEventRequirements] = useState('');
   const [events, setEvents] = useState([]);
 
-  useEffect(() => {
-    fetchEvents();
-  }, []);
 
-  const fetchEvents = async () => {
-    try {
-      const response = await axios.get('http://localhost:3001/events');
-      setEvents(response.data);
-    } catch (error) {
-      console.error('Erro ao buscar eventos:', error);
-    }
-  };
 
   const onDateChange = (selectedDate) => {
     setDate(selectedDate);
     setModalIsOpen(true);
   };
 
-  const handleDeleteEvent = async (eventId) => {
-    try {
-      await axios.delete(`http://localhost:3001/delete-event/${eventId}`);
-      fetchEvents();
-    } catch (error) {
-      console.error('Erro ao excluir evento:', error);
-    }
-  };
 
   const handleSaveEvent = async () => {
     const eventData = {
@@ -61,7 +42,6 @@ const Calendario = () => {
       setEventDescription('');
       setEventValue('');
       setEventRequirements('');
-      fetchEvents();
     } catch (error) {
       console.error('Erro ao salvar evento:', error);
     }
@@ -69,19 +49,7 @@ const Calendario = () => {
 
   return (
     <div>
-      <div>
-        <h3>Eventos:</h3>
-        <ul>
-          {Array.isArray(events) && events.map((event) => (
-            <li key={event.id}>
-              <strong>{event.titulo}:</strong> {event.descricao} (em {format(new Date(event.data), 'PPP', { locale: ptBR })}) 
-              <p>Custo: {event.valor}</p> 
-              <br/>
-              <button className="delete-button" onClick={() => handleDeleteEvent(event.id)}>Excluir</button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <h3>Eventos</h3>
       <Calendar
         onClickDay={onDateChange}
         locale="pt-BR"
