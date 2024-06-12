@@ -4,8 +4,8 @@
     align-items: center;
     flex-wrap: wrap; 
     position: absolute;
-    top: 50%; /* Ancora os botões no meio verticalmente */
-    transform: translateY(-50%); /* Move os botões para cima metade da altura deles mesmos */
+    top: 50%; 
+    transform: translateY(-50%); 
     border-radius: 12rem;
   }
   .Cartao > img {
@@ -18,15 +18,15 @@
   .prev,
   .next {
     position: absolute;
-    top: 50%; /* Ancora os botões no meio verticalmente */
-    transform: translateY(-50%); /* Move os botões para cima metade da altura deles mesmos */
+    top: 50%; 
+    transform: translateY(-50%); 
     border-radius: 12rem;
   }
   
   .prev {
-    left: 24rem; /* Ancora o botão "prev" à esquerda */
+    left: 24rem;
   }
   
   .next {
-    right: 24rem; /* Ancora o botão "next" à direita */
+    right: 24rem; 
   }

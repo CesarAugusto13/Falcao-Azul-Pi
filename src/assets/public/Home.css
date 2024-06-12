@@ -10,12 +10,13 @@ body, html {
 .josefin-sans-heading {
   text-align: center;  
   font-family: 'Josefin Sans', sans-serif;
-  margin-bottom: 20px; /* Adiciona uma margem inferior entre o título e o parágrafo */
+  margin-bottom: 20px; 
 }
 
 .open-sans-body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400; 
+  margin-bottom: 30px; 
 }
 
 .main {
@@ -28,7 +29,7 @@ body, html {
 }
 
 .logoClubeMain {
-  width: 150px;
+  width: 140px !important ;
   margin-top: 0; 
   padding-bottom: 0px;
 }
@@ -38,7 +39,7 @@ body, html {
 }
 
 section {
-  margin-bottom: 40px; /* Adiciona uma margem inferior entre as sections */
+  margin-bottom: 40px;
 }
 
 @media (max-height: 810px) {

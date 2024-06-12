@@ -1,142 +1,161 @@
-/* Estilos gerais */
 body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-  }
-  
-  .logoClubeMain {
-    width: 200px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .josefin-sans-heading {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .cards-container {
-    margin-top: 100px;
-    display: flex;
-    justify-content: flex-start; /* Alinhar cards à esquerda */
-    align-items: center;
-    flex-wrap: wrap;
-  }
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
 
-  .card {
-    display: flex;
-    flex-direction: column;
-    width: 40%; /* Ajustar a largura dos cards */
-    margin: 10px 20px 20px 50px; /* Ajustar as margens */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-title {
-    text-align: center; /* Centraliza o texto horizontalmente */
-    padding-top: 20px;
-    padding-bottom: 10px; /* Adiciona um espaço superior */
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
+.logoClubeMain {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
 
-  .titulo-tabela {
-    padding-left: 10px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-  }
-  
-  .card-content {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  
-  .gain-card {
-    background-color: #d1f2b5; /* Verde claro */
-    color: #333;
-    width: 500px ;
-  }
-  
-  .loss-card {
-    background-color: #f7bac7; /* Rosa claro */
-    color: #333;
-    width: 500px ;
-  }
-  
-  /* Estilos para a tabela dentro dos cards */
-  .card table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 0;
-  }
-  
-  .card th,
-  .card td {
-    padding: 8px;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  .card th {
-    background-color: #f2f2f2;
-  }
-  
-  .new-items-container {
-    display: flex; /* Arrange items in a row */
-    flex-direction: column; /* Stack items vertically */
-    width: 30%; /* Adjust width as needed */
-    margin: 10px 20px 20px 50px; /* Adjust spacing */
-    padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
+.josefin-sans-heading {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-  .itens-premiacao {
-    padding-left: 10px;
-  }
-  
-  .new-item {
-    display: flex; /* Arrange item content (image and text) */
-    align-items: center; /* Align image and text vertically */
-    margin-bottom: 15px; /* Add spacing between items */
-  }
-  
-  .new-item img {
-    width: 80px; /* Adjust image width */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Add space between image and text */
-  }
-  
-  .new-item p {
-    font-size: 16px; /* Adjust text size */
-    font-weight: bold; /* Make text bold */
-  }
+.cards-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 150px;
+}
 
-  /* Styles for the table within Campeões do Acampamento section */
-.new-items-container .card-table {
-  width: 100%; /* Adjust table width as needed */
+.card {
+  flex: 1;
+  margin-bottom: 20px; 
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 10px 20px 20px 50px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.titulo-tabela {
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.card-content {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.gain-card {
+  background-color: #d1f2b5;
+  color: #333;
+  width: 500px ;
+}
+
+.loss-card {
+  background-color: #f7bac7;
+  color: #333;
+  width: 500px ;
+}
+
+.card table {
+  width: 100%;
   border-collapse: collapse;
-  margin-bottom: 0; /* Remove bottom margin for better spacing */
+  margin-bottom: 0;
+}
+
+.card-table th,
+.card-table td {
+font-size: 14px;
+}
+
+.card th,
+.card td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.card th {
+  background-color: #f2f2f2;
+}
+
+.itens-premiacao {
+  padding-left: 10px;
+}
+
+.new-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.new-item img {
+  width: 80px; 
+  height: auto; 
+  margin-right: 10px; 
+}
+
+.new-item p {
+  font-size: 16px; 
+  font-weight: bold; 
+}
+
+.new-items-container {
+display: flex;
+flex-direction: column;
+width: 25%; 
+margin: 10px 20px 20px 50px;
+padding: 10px; 
+border-radius: 10px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.new-items-container .card-table {
+width: 100%; 
+border-collapse: collapse;
+font-size: 14px;
+padding: 8px;
+margin-bottom: 0; 
 }
 
 .new-items-container .card-table th,
 .new-items-container .card-table td {
-  padding: 8px; /* Adjust padding for cell content spacing */
-  border: 1px solid #ddd; /* Add a subtle border */
-  text-align: left; /* Align text to the left */
+padding: 8px; 
+border: 1px solid #ddd; 
+text-align: left; 
 }
 
 .new-items-container .card-table th {
-  background-color: #f2f2f2; /* Light grey background for headers */
+background-color: #f2f2f2; 
 }
 
 .new-items-container .card-table tbody tr:nth-child(odd) {
-  background-color: #f8f8f8; /* Alternate row background color */
+background-color: #f8f8f8; 
+}
+
+@media (max-width: 1616px) {
+
+.cards-container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+}
+
 }
