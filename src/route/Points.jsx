@@ -68,16 +68,44 @@ const Points = () => {
           </table>
         </div>
 
-        <div class="new-items-container">
-          <div class="new-item">
+        <div className="new-items-container">
+          <div className="new-item">
             <img src={Trofeu} alt='Troféu'/>
             <h3>Premiacao do Semestre</h3>
           </div>
-
-          <div class="new-item">
-            <img src="" alt="Item 2 description"/>
-            <p>Item 2 Title</p>
+          <div className="itens-premiacao">
+            <p>Troféu</p>
+            <p>Medalha</p>
+            <p>Uma surpresa especial para a unidade</p>
           </div>
+              
+          <h4 className="titulo-tabela">Campeões do Acampamento</h4>
+            <table className="card-table">
+              <thead>
+                <tr>
+                  <th>Ano</th>
+                  <th>Campeão</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2020</td>
+                  <td>Falcão</td>
+                </tr>
+                <tr>
+                  <td>2021</td>
+                  <td>Águia</td>
+                </tr>
+                <tr>
+                  <td>2022</td>
+                  <td>Gaivota</td>
+                </tr>
+                <tr>
+                  <td>2023</td>
+                  <td>Falcão</td>
+                </tr>
+              </tbody>
+            </table>             
         </div>
         
       </div>

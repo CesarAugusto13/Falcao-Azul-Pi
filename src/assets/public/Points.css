@@ -36,10 +36,20 @@ body {
   }
   
   .card-title {
+    text-align: center; /* Centraliza o texto horizontalmente */
+    padding-top: 20px;
+    padding-bottom: 10px; /* Adiciona um espaço superior */
     font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+  }
+  
+
+  .titulo-tabela {
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
   }
   
   .card-content {
@@ -87,6 +97,10 @@ body {
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
+
+  .itens-premiacao {
+    padding-left: 10px;
+  }
   
   .new-item {
     display: flex; /* Arrange item content (image and text) */
@@ -104,3 +118,25 @@ body {
     font-size: 16px; /* Adjust text size */
     font-weight: bold; /* Make text bold */
   }
+
+  /* Styles for the table within Campeões do Acampamento section */
+.new-items-container .card-table {
+  width: 100%; /* Adjust table width as needed */
+  border-collapse: collapse;
+  margin-bottom: 0; /* Remove bottom margin for better spacing */
+}
+
+.new-items-container .card-table th,
+.new-items-container .card-table td {
+  padding: 8px; /* Adjust padding for cell content spacing */
+  border: 1px solid #ddd; /* Add a subtle border */
+  text-align: left; /* Align text to the left */
+}
+
+.new-items-container .card-table th {
+  background-color: #f2f2f2; /* Light grey background for headers */
+}
+
+.new-items-container .card-table tbody tr:nth-child(odd) {
+  background-color: #f8f8f8; /* Alternate row background color */
+}

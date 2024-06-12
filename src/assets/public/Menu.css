@@ -47,6 +47,7 @@ nav a {
 .login {
     background-color: #ffcfa2 !important; 
     padding: 15px !important;
+    margin-right: 50px;
     border-radius: 0.5rem; 
     display: flex;
     align-items: center;
