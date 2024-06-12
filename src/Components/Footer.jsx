@@ -43,7 +43,7 @@ function Footer() {
                         <span><b>Redes Sociais</b></span>
                         <div className='elementos'>
                             <p><a href="https://www.instagram.com/falcao_azul_aps/" target="_blank">
-                            <img src={InstagramIcone} alt='Instagram Logo'/> </a>
+                            <img src={InstagramIcone} alt='Instagram Logo'/></a>
                             </p>
                             <p>
                             <a href="https://www.facebook.com/ClubeFalcaoAzul" target="_blank">
