@@ -6,6 +6,7 @@ import axios from 'axios';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import '../assets/public/Modal.css';
+import '../assets/public/Calendario.css';
 
 Modal.setAppElement('#root'); // Necessário para acessibilidade
 
@@ -48,7 +49,7 @@ const Calendario = () => {
   };
 
   return (
-    <div>
+    <div className='Calendario'>
       <h3>Eventos</h3>
       <Calendar
         onClickDay={onDateChange}
