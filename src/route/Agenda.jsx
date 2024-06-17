@@ -9,8 +9,10 @@ const Agenda = () => {
   return (
     <>
       <Menu/>
+      <div className='Central'>
       <EventList/>
       <Calendario/>
+      </div>
       <Footer/>
     </>
   )

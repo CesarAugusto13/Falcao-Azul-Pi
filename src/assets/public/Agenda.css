@@ -1,0 +1,6 @@
+.Central {
+    display: flex;
+    justify-content: space-between; /* Coloca os componentes um ao lado do outro com espaço entre eles */
+    align-items: flex-start; /* Alinha os itens no topo */
+    padding: 20px; /* Ajuste o padding conforme necessário */
+  }
