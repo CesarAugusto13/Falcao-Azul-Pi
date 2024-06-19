@@ -80,14 +80,15 @@ const EventList = () => {
         contentLabel="Detalhes do Evento"
       >
         <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={handleCloseModal}>&times;</span>
+          <div className="modal-body">
             <h2>Detalhes do Evento</h2>
             <p>Título: <input type="text" name="titulo" value={editedEvent.titulo} onChange={handleInputChange} /></p>
             <p>Data: <input type="date" name="data" value={editedEvent.data} onChange={handleInputChange} /></p>
             <p>Custo: <input type="number" name="valor" value={editedEvent.valor} onChange={handleInputChange} /></p>
             <p>Descrição: <textarea className="descricao" name="descricao" value={editedEvent.descricao} onChange={handleInputChange} rows="4" cols="50" /></p>
-            <p>Requisitos: <textarea className="requisitos" name="requisitos" value={editedEvent.requisitos} onChange={handleInputChange} rows="2" cols="50" /></p>
+            <p>Requisitos: <textarea className="requisitos" name="requisitos" value={editedEvent.requisitos} onChange={handleInputChange} rows="5" cols="50" /></p>
+          </div>
+          <div className="modal-footer">
             <button className="save-button" onClick={handleSaveEvent}>Salvar</button>
             <button className="cancel-button" onClick={handleCloseModal}>Cancelar</button>
           </div>
