@@ -12,9 +12,7 @@
   text-decoration: none;
   color: white;
 }
-.rodape p{
-  margin-bottom: 5px;
-}
+
 body, html {
   margin: 0;
 }
@@ -41,15 +39,23 @@ body, html {
 }
 
 .rodape-div-4-coluna p {
-  margin-top: 5px; 
   margin-bottom: 5px; 
 }
 
-.elementos p, img{
-  width: 40px;
-  display: inline-block;
-  padding-right: .625rem;
+.elementos {
+  display: flex; 
+}
 
+.elementos p {
+  margin: 0; 
+}
+
+.elementos img {
+  width: 35px;
+  height: 35px;
+  margin-right: 5px; 
+  border-radius: 20%;
+  padding-top: 5px;
 }
 
 span b {

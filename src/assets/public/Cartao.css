@@ -1,32 +1,53 @@
-.Cartao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; 
-    position: absolute;
-    top: 50%; 
-    transform: translateY(-50%); 
-    border-radius: 12rem;
-  }
-  .Cartao > img {
-    top:0%;
-    justify-content: center;
-    text-align: center;
-    
-  }
-  
-  .prev,
-  .next {
-    position: absolute;
-    top: 50%; 
-    transform: translateY(-50%); 
-    border-radius: 12rem;
-  }
-  
-  .prev {
-    left: 24rem;
-  }
-  
-  .next {
-    right: 24rem; 
-  }
+.cartoes {
+  display: flex;
+  justify-content: center;
+  max-width: 80%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
+  gap: 50px;
+  margin-top: 2%;
+}
+
+.cartoes > div {
+  flex: 0 1 200px;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  color: white;
+}
+
+.cartoes img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+}
+
+.cartao-azul {
+  background-color: #33488f;
+  height: 400px;
+}
+
+.cartao-vermelho {
+  background-color: #ac3a46;
+}
+
+.cartao-verde {
+  background-color: #2f9c49;
+}
+
+.cartao-cinza {
+  background-color: #808080;
+}
+
+.cartao-roxo {
+  background-color: #a53692;
+}
+
+.cartao-amarelo {
+  background-color: #f0cd63;
+}

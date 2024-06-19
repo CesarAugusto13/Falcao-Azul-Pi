@@ -6,7 +6,7 @@ const app = express();
 
 const hostname = '127.0.0.1';
 const usuario = 'root';
-const senha = '#Root@75';
+const senha = 'qawsqswa';
 const esquema = 'FalcaoAzul';
 
 // Configuração da conexão com o banco de dados MySQL
