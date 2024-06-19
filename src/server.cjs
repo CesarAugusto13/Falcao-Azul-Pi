@@ -6,10 +6,9 @@ const app = express();
 
 const hostname = '127.0.0.1';
 const usuario = 'root';
-const senha = 'qawsqswa';
+const senha = '#Root@75';
 const esquema = 'FalcaoAzul';
 
-// Configuração da conexão com o banco de dados MySQL
 const db = mysql.createConnection({
     host: hostname,
     user: usuario,
@@ -19,7 +18,6 @@ const db = mysql.createConnection({
 app.use(cors());
 app.use(bodyParser.json());
 
-// Conectar ao banco de dados
 db.connect((err) => {
     if (err) {
         console.error('Erro ao conectar ao banco de dados:', err);
@@ -27,7 +25,6 @@ db.connect((err) => {
     }
     console.log('Conectado ao servidor MySQL');
     
-    // Criar o esquema (banco de dados) se não existir
     db.query(`CREATE DATABASE IF NOT EXISTS ${esquema}`, (err, result) => {
         if (err) {
             console.error('Erro ao criar o esquema:', err);
@@ -35,7 +32,6 @@ db.connect((err) => {
         }
         console.log('Esquema criado ou já existente');
         
-        // Alterar para o esquema criado
         db.changeUser({ database: esquema }, (err) => {
             if (err) {
                 console.error('Erro ao selecionar o esquema:', err);
@@ -43,7 +39,6 @@ db.connect((err) => {
             }
             console.log('Esquema selecionado:', db.config.database);
             
-            // Criar a tabela de usuários se não existir
             const createUsersTable = `
                 CREATE TABLE IF NOT EXISTS usuarios (
                     id INT AUTO_INCREMENT PRIMARY KEY,

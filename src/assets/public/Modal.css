@@ -52,6 +52,24 @@
   border-radius: 5px;
 }
 
+.modal-body input[type="text"],
+.modal-body input[type="date"],
+.modal-body input[type="number"] {
+  height: 40px;
+}
+
+.modal-body textarea {
+  resize: vertical;
+}
+
+.modal-body .descricao {
+  height: 100px; 
+}
+
+.modal-body .requisitos {
+  height: 50px;
+}
+
 .modal-footer {
   display: flex;
   justify-content: flex-end;

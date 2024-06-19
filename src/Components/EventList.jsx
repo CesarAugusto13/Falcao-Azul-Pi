@@ -8,7 +8,7 @@ const EventList = () => {
   const [events, setEvents] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [editedEvent, setEditedEvent] = useState({ titulo: '', data: '', valor: '' });
+  const [editedEvent, setEditedEvent] = useState({ titulo: '', data: '', valor: '', requisitos: '', descricao: '' });
 
   useEffect(() => {
     fetchEvents();
@@ -44,7 +44,7 @@ const EventList = () => {
 
   const handleCloseModal = () => {
     setSelectedEvent(null);
-    setEditedEvent({ titulo: '', data: '', valor: '' });
+    setEditedEvent({ titulo: '', data: '', valor: '', requisitos: '', descricao: '' });
     setModalIsOpen(false);
   };
 
@@ -86,7 +86,10 @@ const EventList = () => {
             <p>Título: <input type="text" name="titulo" value={editedEvent.titulo} onChange={handleInputChange} /></p>
             <p>Data: <input type="date" name="data" value={editedEvent.data} onChange={handleInputChange} /></p>
             <p>Custo: <input type="number" name="valor" value={editedEvent.valor} onChange={handleInputChange} /></p>
-            <button onClick={handleSaveEvent}>Salvar</button>
+            <p>Descrição: <textarea className="descricao" name="descricao" value={editedEvent.descricao} onChange={handleInputChange} rows="4" cols="50" /></p>
+            <p>Requisitos: <textarea className="requisitos" name="requisitos" value={editedEvent.requisitos} onChange={handleInputChange} rows="2" cols="50" /></p>
+            <button className="save-button" onClick={handleSaveEvent}>Salvar</button>
+            <button className="cancel-button" onClick={handleCloseModal}>Cancelar</button>
           </div>
         </div>
       </Modal>
