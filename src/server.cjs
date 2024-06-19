@@ -117,7 +117,25 @@ app.delete('/delete-event/:id', (req, res) => {
     });
 });
 
+app.put('/update-event/:id', (req, res) => {
+    const eventId = req.params.id;
+    const { titulo, descricao, valor, requisitos, data } = req.body;
+    const query = `
+        UPDATE eventos 
+        SET titulo = ?, descricao = ?, valor = ?, requisitos = ?, data = ?
+        WHERE id = ?
+    `;
 
+    db.query(query, [titulo, descricao, valor, requisitos, data, eventId], (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        if (result.affectedRows === 0) {
+            return res.status(404).send('Evento não encontrado');
+        }
+        res.status(200).send('Evento atualizado com sucesso');
+    });
+});
 
 app.listen(3001, () => {
     console.log('Servidor rodando na porta 3001');

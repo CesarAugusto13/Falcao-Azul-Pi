@@ -8,8 +8,7 @@ import { ptBR } from 'date-fns/locale';
 import '../assets/public/Modal.css';
 import '../assets/public/Calendario.css';
 
-Modal.setAppElement('#root'); // Necessário para acessibilidade
-
+Modal.setAppElement('#root');
 const Calendario = () => {
   const [date, setDate] = useState(new Date());
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -19,13 +18,27 @@ const Calendario = () => {
   const [eventRequirements, setEventRequirements] = useState('');
   const [events, setEvents] = useState([]);
 
+  useEffect(() => {
+    fetchEvents();
+  }, []);
 
+  const fetchEvents = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/events');
+      const formattedEvents = response.data.map(event => ({
+        ...event,
+        data: event.data.slice(0, 10)
+      }));
+      setEvents(formattedEvents);
+    } catch (error) {
+      console.error('Erro ao buscar eventos:', error);
+    }
+  };
 
   const onDateChange = (selectedDate) => {
     setDate(selectedDate);
     setModalIsOpen(true);
   };
-
 
   const handleSaveEvent = async () => {
     const eventData = {
@@ -43,6 +56,7 @@ const Calendario = () => {
       setEventDescription('');
       setEventValue('');
       setEventRequirements('');
+      fetchEvents();
     } catch (error) {
       console.error('Erro ao salvar evento:', error);
     }
