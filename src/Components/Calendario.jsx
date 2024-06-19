@@ -64,7 +64,6 @@ const Calendario = () => {
 
   return (
     <div className='Calendario'>
-      <h3>Eventos</h3>
       <Calendar
         onClickDay={onDateChange}
         locale="pt-BR"
