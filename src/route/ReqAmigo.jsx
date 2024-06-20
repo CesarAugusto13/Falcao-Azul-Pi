@@ -4,7 +4,7 @@ const ReqAmigo = () => {
   return (
     <div>
       <h3>Detalhes do Cartão Amigo</h3>
-      <p>Informações detalhadas sobre os requisitos do cartão Amigo.</p>
+      <p>Próxima Sprint.</p>
     </div>
   );
 };
