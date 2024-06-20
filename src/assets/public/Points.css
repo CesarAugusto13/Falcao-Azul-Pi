@@ -30,11 +30,10 @@ body {
   margin-bottom: 20px; 
   display: flex;
   flex-direction: column;
-  width: 30%;
   margin: 10px 20px 20px 50px;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .card-title {
@@ -95,6 +94,7 @@ font-size: 14px;
 }
 
 .itens-premiacao {
+  font-size: 14px;
   padding-left: 10px;
 }
 
@@ -105,7 +105,7 @@ font-size: 14px;
 }
 
 .new-item img {
-  width: 80px; 
+  width: 50px; 
   height: auto; 
   margin-right: 10px; 
 }
@@ -115,18 +115,18 @@ font-size: 14px;
   font-weight: bold; 
 }
 
-.new-items-container {
+.premiacao-container {
 display: flex;
 flex-direction: column;
 width: 25%; 
 margin: 10px 20px 20px 50px;
 padding: 10px; 
 border-radius: 10px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 
-.new-items-container .card-table {
+.premiacao-container .card-table {
 width: 100%; 
 border-collapse: collapse;
 font-size: 14px;
@@ -134,28 +134,145 @@ padding: 8px;
 margin-bottom: 0; 
 }
 
-.new-items-container .card-table th,
-.new-items-container .card-table td {
+.premiacao-container .card-table th,
+.premiacao-container .card-table td {
 padding: 8px; 
 border: 1px solid #ddd; 
 text-align: left; 
 }
 
-.new-items-container .card-table th {
+.premiacao-container .card-table th {
 background-color: #f2f2f2; 
 }
 
-.new-items-container .card-table tbody tr:nth-child(odd) {
+.premiacao-container .card-table tbody tr:nth-child(odd) {
 background-color: #f8f8f8; 
 }
 
-@media (max-width: 1616px) {
 
-.cards-container {
-  margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; 
+@media (max-height: 650px) {
+  .cards-container {
+    justify-content: center;
+    padding-left: 20px;
+  }
+
+  .itens-premiacao {
+    font-size: 11px;
+    padding-left: 10px;
+  }
+
+  .card {
+    width: 10%; 
+    padding: 10px; 
+    margin: 10px 5px; 
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .card-table th,
+  .card-table td {
+    font-size: 12px; 
+    padding: 4px; 
+  }
+
+  .new-item img {
+    width: 50px; 
+  }
+
+  .premiacao-container {
+    width: 30%;
+    padding: 12px; 
+  }
+
+  .premiacao-container .card-table th,
+  .premiacao-container .card-table td {
+    font-size: 12px; 
+    padding: 4px; 
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  .titulo-tabela {
+    font-size: 14px;
+  }
 }
 
+@media (max-height: 768px) {
+  .cards-container {
+    justify-content: center;
+    padding-left: 20px;
+  }
+
+  .itens-premiacao {
+    font-size: 13px;
+    padding-left: 10px;
+  }
+
+
+  .card {
+    width: 10%; 
+    padding: 10px; 
+    margin: 10px 5px; 
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .card-table th,
+  .card-table td {
+    font-size: 12px; 
+    padding: 4px; 
+  }
+
+  .new-item img {
+    width: 50px; 
+  }
+
+  .premiacao-container {
+    width: 30%;
+    padding: 12px; 
+  }
+
+  .premiacao-container .card-table th,
+  .premiacao-container .card-table td {
+    font-size: 12px; 
+    padding: 4px; 
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  .titulo-tabela {
+    font-size: 14px;
+  }
+}
+
+@media (max-height: 700px) {
+  .premiacao-container {
+    padding: 10px;
+  }
+
+  .new-item img {
+    width: 40px;
+  }
+
+  .new-item p {
+    font-size: 12px; 
+  }
+
+  .premiacao-container .card-table th,
+  .premiacao-container .card-table td {
+    font-size: 10px; 
+    padding: 3px; 
+  }
+
+  .premiacao-container .card-table tbody tr:nth-child(odd) {
+    background-color: #f8f8f8;
+  }
 }

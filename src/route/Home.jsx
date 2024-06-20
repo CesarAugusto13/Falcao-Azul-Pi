@@ -11,7 +11,7 @@ const Home = () => {
       <main className="main"> 
         <img src={LogoFalcaoAzul} alt="Logo Falcão Azul" className="logoClubeMain" />
         <section>
-          <h2 className="josefin-sans-heading">Quem somos</h2>
+          <h3 className="josefin-sans-heading">Quem somos</h3>
           <p className="open-sans-body">
             O Clube de Desbravadores da Igreja Adventista ensina habilidades práticas e valores,
             como disciplina e civismo, através de atividades. Com acampamentos anuais que 
@@ -22,12 +22,12 @@ const Home = () => {
         </section>
 
         <section>
-          <h2 className="josefin-sans-heading">Até que idade posso participar?</h2>
+          <h3 className="josefin-sans-heading">Até que idade posso participar?</h3>
           <p className="open-sans-body">Dos 10 aos 16 anos de idade.</p>
         </section>
 
         <section>
-          <h2 className="josefin-sans-heading">Horário e Local das Reuniões</h2>
+          <h3 className="josefin-sans-heading">Horário e Local das Reuniões</h3>
           <p className="open-sans-body">
             Sábado das 14:45h às 17:00h 
             Local: Rua Piratini 163, Jardim Branca Flor, CEP: 06855-620 - Igreja Adventista <br />

@@ -28,6 +28,7 @@ const Cartao = () => {
           <img src={LogoPesq} alt="Logo cartão amigo" />
           <h4>Pesquisador</h4>
           <p>12 anos</p>
+          <p>Saiba mais sobre todos os requisitos do cartão</p>
         </div>
         <div className="cartao-cinza">
           <img src={LogoPioneiro} alt="Logo cartão amigo" />

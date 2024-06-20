@@ -25,8 +25,6 @@ const Points = () => {
   return (
     <div>
       <Menu />
-      <h1 className="josefin-sans-heading">Pontuação</h1>
-
       <div className="cards-container">
         <div className="card gain-card">
           <h2 className="card-title">Conquista de Pontos</h2>
@@ -68,7 +66,7 @@ const Points = () => {
           </table>
         </div>
 
-        <div className="new-items-container">
+        <div className="premiacao-container">
           <div className="new-item">
             <img src={Trofeu} alt='Troféu'/>
             <h3>Premiacao do Semestre</h3>

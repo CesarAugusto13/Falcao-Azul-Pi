@@ -44,6 +44,17 @@ nav a {
     padding: 0.625rem; 
 }
 
+.nav-link {
+color: #ffffff; 
+text-decoration: none;
+}
+
+.nav-link.active {
+color: #ffffff; 
+background-color: #6981cf;
+border-radius: 10%;
+}
+
 .login {
     background-color: #ffcfa2 !important; 
     padding: 15px !important;
@@ -67,9 +78,6 @@ nav a {
     border-radius: 50%; 
     padding-left: 10px;
 }
-
-
-
 
 
 @media (max-width: 1150px) {

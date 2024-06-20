@@ -6,7 +6,7 @@ const app = express();
 
 const hostname = '127.0.0.1';
 const usuario = 'root';
-const senha = '#Root@75';
+const senha = 'qawsqswa';
 const esquema = 'FalcaoAzul';
 
 const db = mysql.createConnection({
@@ -131,6 +131,8 @@ app.put('/update-event/:id', (req, res) => {
         res.status(200).send('Evento atualizado com sucesso');
     });
 });
+
+const port = process.env.PORT || 3001;
 
 app.listen(3001, () => {
     console.log('Servidor rodando na porta 3001');
