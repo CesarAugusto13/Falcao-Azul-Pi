@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
-import '../assets/public/Eventlist.css'
+import '../assets/public/Eventlist.css';
+
 Modal.setAppElement('#root');
 
 const EventList = () => {
@@ -31,6 +32,7 @@ const EventList = () => {
     try {
       await axios.delete(`http://localhost:3001/delete-event/${eventId}`);
       fetchEvents();
+      window.location.reload();
     } catch (error) {
       console.error('Erro ao excluir evento:', error);
     }
@@ -53,6 +55,7 @@ const EventList = () => {
       await axios.put(`http://localhost:3001/update-event/${selectedEvent.id}`, editedEvent);
       handleCloseModal();
       fetchEvents();
+      window.location.reload();
     } catch (error) {
       console.error('Erro ao atualizar evento:', error);
     }
@@ -66,37 +69,55 @@ const EventList = () => {
   return (
     <>
       <div className='mural'>
-        <div className="event-list">
-          {events.map((event) => (
-            <div key={event.id} className="event-item">
-              <h4>{event.titulo}</h4>
-              <p>Data: {event.data}</p>
-              <p>Custo: {event.valor}</p>
-              <button onClick={() => handleOpenModal(event)}>Detalhes</button>
-              <button onClick={() => handleDeleteEvent(event.id)}>Excluir</button>
-            </div>
-          ))}
-          <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={handleCloseModal}
-            contentLabel="Detalhes do Evento"
-          >
-            <div className="modal">
-              <div className="modal-body">
-                <h2>Detalhes do Evento</h2>
-                <p>Título: <input type="text" name="titulo" value={editedEvent.titulo} onChange={handleInputChange} /></p>
-                <p>Data: <input type="date" name="data" value={editedEvent.data} onChange={handleInputChange} /></p>
-                <p>Custo: <input type="number" name="valor" value={editedEvent.valor} onChange={handleInputChange} /></p>
-                <p>Descrição: <textarea className="descricao" name="descricao" value={editedEvent.descricao} onChange={handleInputChange} rows="4" cols="50" /></p>
-                <p>Requisitos: <textarea className="requisitos" name="requisitos" value={editedEvent.requisitos} onChange={handleInputChange} rows="5" cols="50" /></p>
-              </div>
-              <div className="modal-footer">
-                <button className="save-button" onClick={handleSaveEvent}>Salvar</button>
-                <button className="cancel-button" onClick={handleCloseModal}>Cancelar</button>
-              </div>
-            </div>
-          </Modal>
+        <div className="event-table-container">
+          {events.length > 0 ? (
+            <table className="event-table">
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th>Data</th>
+                  <th>Custo</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                {events.map((event) => (
+                  <tr key={event.id} className="event-item">
+                    <td>{event.titulo}</td>
+                    <td>{event.data}</td>
+                    <td>{event.valor}</td>
+                    <td>
+                      <button onClick={() => handleOpenModal(event)} className='btn-detalhes'>Detalhes</button>
+                      <button onClick={() => handleDeleteEvent(event.id)} className='btn-excluir'>Excluir</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <p className="no-events">Nenhum evento adicionado</p>
+          )}
         </div>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={handleCloseModal}
+          contentLabel="Detalhes do Evento"
+        >
+          <div className="modal">
+            <div className="modal-body">
+              <h2>Detalhes do Evento</h2>
+              <p>Título: <input type="text" name="titulo" value={editedEvent.titulo} onChange={handleInputChange} /></p>
+              <p>Data: <input type="date" name="data" value={editedEvent.data} onChange={handleInputChange} /></p>
+              <p>Custo: <input type="number" name="valor" value={editedEvent.valor} onChange={handleInputChange} /></p>
+              <p>Descrição: <textarea className="descricao" name="descricao" value={editedEvent.descricao} onChange={handleInputChange} rows="4" cols="50" /></p>
+              <p>Requisitos: <textarea className="requisitos" name="requisitos" value={editedEvent.requisitos} onChange={handleInputChange} rows="5" cols="50" /></p>
+            </div>
+            <div className="modal-footer">
+              <button className="save-button" onClick={handleSaveEvent}>Salvar</button>
+              <button className="cancel-button" onClick={handleCloseModal}>Cancelar</button>
+            </div>
+          </div>
+        </Modal>
       </div>
     </>
   );

@@ -10,8 +10,8 @@ const Agenda = () => {
     <>
       <Menu/>
       <div className='Central'>
-      <EventList/>
-      <Calendario/>
+        <EventList/>
+        <Calendario/>
       </div>
       <Footer/>
     </>

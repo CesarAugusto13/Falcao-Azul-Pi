@@ -57,6 +57,7 @@ const Calendario = () => {
       setEventValue('');
       setEventRequirements('');
       fetchEvents();
+      window.location.reload();
     } catch (error) {
       console.error('Erro ao salvar evento:', error);
     }
