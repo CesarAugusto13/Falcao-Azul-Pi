@@ -75,3 +75,24 @@ section {
     padding: 0 10px; 
   }
 }
+
+
+@media (max-height: 720px) {
+  .logoClubeMain {
+    width: 100px !important ;
+    margin-top: 0; 
+    padding-bottom: 0px;
+  }
+  .josefin-sans-heading {
+  
+    font-size: 17px !important;
+  }
+  .open-sans-body {
+    font-size: 12px !important; 
+    margin-bottom: 5px;
+  }
+
+  section {
+    margin-bottom: 15px;
+  }
+}

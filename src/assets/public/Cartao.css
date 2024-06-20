@@ -53,22 +53,42 @@
   background-color: #f0cd63;
 }
 
+.link-info {
+  text-decoration: none;
+  margin-top: 50%;
+  display: inline-block;
+  color: white;
+  font-size: 14px;
+}
+
 @media (max-height: 768px) {
   .cartoes {
     align-items: center;
     gap: 20px;
   }
 
+  .idade {
+    font-size: 10px;
+  }
+
+  h4 {
+    font-size: 13px;
+  }
+
+  .link-info {
+    font-size: 12px;
+  }
+
   .cartoes > div {
     max-width: 150px;
     min-width: 150px;
-    height: 300px;
+    height: 320px;
     padding: 10px;
   }
 
   .cartoes img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
 
   .cartao-azul, .cartao-vermelho, .cartao-verde, .cartao-cinza, .cartao-roxo, .cartao-amarelo {
@@ -82,10 +102,14 @@
     gap: 20px;
   }
 
+  .link-info {
+    font-size: 8px;
+  }
+
   .cartoes > div {
     max-width: 100px;
     min-width: 100px;
-    height: 300px;
+    height: 250px;
     width: 100px;
     padding: 10px;
   }
@@ -101,5 +125,12 @@
 
   p {
     font-size: 10px;
+  }
+}
+
+
+@media (min-height: 768px) {
+  .link-info {
+    font-size: 14px;
   }
 }

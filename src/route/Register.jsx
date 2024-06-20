@@ -27,7 +27,7 @@ const Register = () => {
           <button>Registrar-se</button>
         </form>
         <p>
-            Possui uma conta?  <Link to='/login'><span href='/login'>Login</span></Link>
+            Já possui uma conta?  <Link to='/login'><span href='/login'>Login</span></Link>
         </p>
       </div>
     </div>

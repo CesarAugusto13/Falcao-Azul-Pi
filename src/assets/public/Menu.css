@@ -53,6 +53,8 @@ text-decoration: none;
 color: #ffffff; 
 background-color: #6981cf;
 border-radius: 10%;
+margin-left: 5px;
+margin-right: 5px;
 }
 
 .login {
@@ -80,6 +82,20 @@ border-radius: 10%;
 }
 
 
+@media (max-height: 720px) {
+    .perfil {
+        width: 40px;
+        height: 30px;
+    }
+
+    .logo-container h3 {
+        margin: 0;
+        color: #33488f;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 1150px) {
     header {
         padding: 2px !important;
@@ -95,7 +111,7 @@ border-radius: 10%;
     }
 
     .perfil {
-        width: 20px;
+        width: 30px;
         height: 20px;
     }
 

@@ -15,7 +15,7 @@ const Login = () => {
                 <button >Login</button>
             </form>
             <p>Não tem uma conta? <Link to='/register'><span href='/register'>Registrar</span></Link></p>
-            <button className="back-button" onClick={() => history.push()}>
+            <button className="back-button" onClick={() => window.location.replace('/')}>
               Voltar
             </button>
         </div>
