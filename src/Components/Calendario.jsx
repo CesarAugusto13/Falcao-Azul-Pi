@@ -9,6 +9,7 @@ import '../assets/public/Modal.css';
 import '../assets/public/Calendario.css';
 
 Modal.setAppElement('#root');
+
 const Calendario = () => {
   const [date, setDate] = useState(new Date());
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -41,6 +42,12 @@ const Calendario = () => {
   };
 
   const handleSaveEvent = async () => {
+
+    if (!eventTitle || !eventDescription) {
+      alert('Por favor, preencha todos os campos obrigatórios (Título e Descrição).');
+      return;
+    }
+    
     const eventData = {
       titulo: eventTitle,
       descricao: eventDescription,
@@ -63,6 +70,14 @@ const Calendario = () => {
     }
   };
 
+  const tileClassName = ({ date, view }) => {
+    if (view === 'month') {
+      const eventForDate = events.find(event => event.data === format(date, 'yyyy-MM-dd'));
+      return eventForDate ? 'event-date' : null;
+    }
+    return null;
+  };
+
   return (
     <div className='Calendario'>
       <Calendar
@@ -74,6 +89,7 @@ const Calendario = () => {
             return eventForDate ? <p>{eventForDate.titulo}</p> : null;
           }
         }}
+        tileClassName={tileClassName}
       />
       <Modal
         isOpen={modalIsOpen}
@@ -85,7 +101,7 @@ const Calendario = () => {
           <button onClick={() => setModalIsOpen(false)}>&times;</button>
         </div>
         <div className="modal-body">
-          <input
+        <input
             type="text"
             value={eventTitle}
             onChange={(e) => setEventTitle(e.target.value)}
